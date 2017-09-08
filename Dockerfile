@@ -14,12 +14,12 @@
 
 FROM ubuntu:16.04
 
-MAINTAINER Dockerfiles
+MAINTAINER sathish26
 
 # Install required packages and remove the apt packages cache when done.
 
 RUN apt-get update && \
-    apt-get upgrade -y && \ 	
+    apt-get upgrade -y && \
     apt-get install -y \
 	git \
 	python3 \
@@ -51,7 +51,6 @@ COPY . /home/docker/code/
 
 # install django, normally you would remove this step because your project would already
 # be installed in the code/app/ directory
-RUN django-admin.py startproject website /home/docker/code/app/
+#RUN django-admin.py startproject website /home/docker/code/app/
 
-EXPOSE 80
 CMD ["supervisord", "-n"]
