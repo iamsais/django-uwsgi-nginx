@@ -22,6 +22,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
 	git \
+        curl \
 	python3 \
 	python3-dev \
 	python3-setuptools \
@@ -48,6 +49,8 @@ RUN pip3 install -r /home/docker/code/app/requirements.txt
 
 # add (the rest of) our code
 COPY . /home/docker/code/
+
+ENV LANG=en_IN
 
 # install django, normally you would remove this step because your project would already
 # be installed in the code/app/ directory
