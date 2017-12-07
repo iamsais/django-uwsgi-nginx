@@ -29,7 +29,6 @@ RUN apt-get update && \
 	python3-pip \
 	nginx \
 	supervisor \
-	sqlite3 && \
 	pip3 install -U pip setuptools && \
    rm -rf /var/lib/apt/lists/*
 
@@ -55,5 +54,7 @@ ENV LANG=en_IN
 # install django, normally you would remove this step because your project would already
 # be installed in the code/app/ directory
 #RUN django-admin.py startproject website /home/docker/code/app/
+
+EXPOSE 80
 
 CMD ["supervisord", "-n"]
