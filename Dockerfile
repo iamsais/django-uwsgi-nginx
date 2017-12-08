@@ -28,7 +28,7 @@ RUN apt-get update && \
 	python3-setuptools \
 	python3-pip \
 	nginx \
-	supervisor \
+	supervisor && \
 	pip3 install -U pip setuptools && \
    rm -rf /var/lib/apt/lists/*
 
@@ -55,6 +55,6 @@ ENV LANG=en_IN
 # be installed in the code/app/ directory
 #RUN django-admin.py startproject website /home/docker/code/app/
 
-EXPOSE 80
+EXPOSE 80 443
 
 CMD ["supervisord", "-n"]
