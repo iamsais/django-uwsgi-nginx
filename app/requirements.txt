@@ -1,1 +1,19 @@
 django
+djangorestframework == 3.*
+mongoengine
+python-dotenv
+kafka-python
+redis
+djangorestframework-jwt
+validate_email
+django-cors-headers
+requests
+netaddr
+geopy
+openpyxl
+reportlab
+pyfcm == 1.4.2
+git+https://github.com/Julian/jsonschema.git@draft6
+plivo
+python-jose
+cryptography
