@@ -13,7 +13,9 @@ geopy
 openpyxl
 reportlab
 pyfcm == 1.4.2
-git+https://github.com/Julian/jsonschema.git@draft6
+jsonschema
 plivo
 python-jose
 cryptography
+pycrypto
+pyinstaller

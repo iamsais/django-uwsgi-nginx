@@ -21,7 +21,7 @@ MAINTAINER sathish26
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
-	git \
+	nano \
         curl \
 	python3 \
 	python3-dev \
@@ -44,7 +44,12 @@ COPY supervisor-app.conf /etc/supervisor/conf.d/
 # to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
 
 COPY app/requirements.txt /home/docker/code/app/
-RUN pip3 install -r /home/docker/code/app/requirements.txt
+
+RUN pip3 install virtualenv && \
+    python3 -m virtualenv /home/docker/django-saas-api && \
+#    source /home/docker/django-saas-api/bin/activate && \
+    pip3 install -r /home/docker/code/app/requirements.txt
+    
 
 # add (the rest of) our code
 COPY . /home/docker/code/
